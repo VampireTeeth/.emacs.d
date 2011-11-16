@@ -265,7 +265,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; `text-mode' and `org-mode' madness ;)
-(load-file "~/.emacs.d/lisp/org-mode-settings.el")
 (load-file "~/.emacs.d/lisp/text-mode-like-settings.el")
 
 ;; (add-hook 'muse-mode-hook 'my-text-mode-hook)
