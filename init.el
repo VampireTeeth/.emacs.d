@@ -19,21 +19,9 @@
       ;; debug-on-signal t
       ;; debug-on-quit t)
 
-;; set PATH to use standalone texlive instead
-(setenv "PATH" "/opt/texlive/2011/bin/x86_64-linux:$PATH" t)
-
 ;; load path for elisp files
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
-(add-to-list 'load-path (expand-file-name "~/build/org-mode/lisp"))
-(add-to-list 'load-path (expand-file-name "~/build/org-mode/contrib/lisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lhcb"))
-
-;; ;; Info directory
-;; (add-to-list 'Info-default-directory-list
-;; 	     (expand-file-name "/opt/emacs-lisp/share/info"))
-
-;; Emacs C source directory
-(setq find-function-C-source-directory "~/build/emacs/src")
 
 
 ;; faces
@@ -108,23 +96,6 @@
  '(w3m-use-cookies t)
  '(windmove-wrap-around t))
 
-
-;; colour themes using color-theme.el
-(load-file "~/.emacs.d/lisp/color-theme-dark-emacs.el")
-
-(eval-after-load "color-theme"
-  (progn
-    (setq color-theme-is-global nil)
-    (when (window-system) ; needed for the first frame
-      (color-theme-dark-emacs)
-      )))
-
-(add-hook 'after-make-frame-functions
-	  '(lambda (f)
-	     (with-selected-frame f
-	       (if (window-system f)
-		   (color-theme-dark-emacs)
-		 ))))
 
 ;; ;; alternate theming API, supported by native Emacs >=24
 ;; ;; colour theme using internal emacs theming
@@ -340,8 +311,6 @@
 ;; reported a bug for this 1 ;) (not in vanilla Emacs)
 (require 'dired-details)
 (require 'dired-details+)
-(require 'dired-sort-menu)
-(require 'dired-sort-menu+)
 (require 'dired-sort-map)
 
 ;; ;; load dired-x in dired (enables omitting files)
@@ -385,15 +354,6 @@
 
 ;; Python customisations
 
-;; Pymacs setup
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-;;(eval-after-load "pymacs"
-;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
-
 
 ;; Lisp/Elisp customisations
 (defun my-lisp-mode-hook ()
@@ -417,11 +377,11 @@
 ;; hooks
 ;; (add-hook 'c-mode-common-hook 'c-mode-common-keymaps)
 
-;; Documentation tools
-;; doxymacs
-(require 'doxymacs)
-;; (eval-after-load "doxymacs"
-;;   (define-key c-mode-base-map '[(C-c d)] doxymacs-))
+;; ;; Documentation tools
+;; ;; doxymacs
+;; (require 'doxymacs)
+;; ;; (eval-after-load "doxymacs"
+;; ;;   (define-key c-mode-base-map '[(C-c d)] doxymacs-))
 
 
 ;; HEP specific modes
