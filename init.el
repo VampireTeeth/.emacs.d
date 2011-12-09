@@ -358,12 +358,6 @@
 	  (lambda()
 	    (add-to-list 'ac-sources 'ac-source-semantic)))
 
-(require 'ac-math)
-(add-hook 'LaTeX-mode-hook
-	  (lambda()
-	    (add-to-list 'ac-sources 'ac-source-latex-commands)
-	    (add-to-list 'ac-sources 'ac-source-math-latex)))
-(add-to-list 'ac-modes 'latex-mode)
 
 ;; Python customisations
 
