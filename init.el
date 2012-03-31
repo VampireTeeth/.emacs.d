@@ -86,9 +86,6 @@
  '(windmove-wrap-around t))
 
 
-;; Colour theme and other gui related config
-(load-file "~/.emacs.d/gui-config.el")	; requires color-theme.el
-
 ;; Important movement and editing config with some essential libraries
 (load-file "~/.emacs.d/keybindings.el")
 
@@ -102,9 +99,6 @@
 
 ;; `text-mode'
 (load-file "~/.emacs.d/text-mode-config.el") ; has some org dependence
-
-;; use with mutt, ItsAllText and eml files
-(load-file "~/.emacs.d/email-config.el") ; has some org dependence
 
 ;; Lisp/Elisp customisations
 (defun sa-lisp-mode-hook ()
